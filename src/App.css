@@ -64,3 +64,13 @@ footer {
 .table-striped{
   font-size: 1.7rem;
 }
+
+#footer {
+  height:100px;
+  text-align: center;
+  justify-content: center;
+}
+
+#footer a{
+  color: white;
+}

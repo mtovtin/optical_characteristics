@@ -1,13 +1,24 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 // Bootstrap Bundle JS
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import logo from '../images/logo.png';
-import Home from "../pages/Home"
-import OpticalStructures from "../pages/OpticalStructures"
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import OpticalNumbers from '../pages/OpticalNumbers';
+import LocalizedStrings from 'react-localization';
+
+let strings = new LocalizedStrings({
+    en: {
+        home: "Home",
+        os: "Optical structures",
+        modern: "Information about modern optical coatings",
+        indices: "Refractive indices of materials"
+    },
+    ua: {
+        home: "Головна",
+        os: "Оптичні структури",
+        modern: "Відомості про сучасні оптичні покриття",
+        indices: "Показники заломлення матеріалів"
+    }
+});
 
 const Navbar = () => (
 
@@ -25,24 +36,21 @@ const Navbar = () => (
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                     <li className="nav-item">
-                        <a className="nav-link active" aria-current="page" href='/'>Головна</a>
+                        <a className="nav-link active" aria-current="page" href='/'>{strings.home}</a>
                     </li>
                     <li className="nav-item dropdown">
-                        <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Оптичні структури
+                        <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            {strings.os}
                         </a>
                         <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a className="dropdown-item" href="/structures" target='frame1'>Відомості
-                                про сучасні оптичні покриття</a></li>
+                            <li><a className="dropdown-item" href="/structures" target='frame1'>{strings.modern}</a></li>
                             <li>
                                 <hr className="dropdown-divider"></hr>
                             </li>
-                            <li><a className="dropdown-item" href="/numbers" target='frame1'>Показники заломлення
-                                матеріалів</a></li>
+                            <li><a className="dropdown-item" href="/numbers" target='frame1'>{strings.indices}</a></li>
                         </ul>
                     </li>
-                  
+
                 </ul>
             </div>
         </div>

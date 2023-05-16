@@ -1,16 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
 import Navbar from './components/Navbar'
 import './App.css';
 import Home from "./pages/Home"
 import OpticalStructures from "./pages/OpticalStructures"
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import OpticalNumbers from './pages/OpticalNumbers';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <>
-     <Navbar></Navbar>
+      <Navbar></Navbar>
       <Router>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -18,10 +18,10 @@ function App() {
           <Route path="/numbers" element={<OpticalNumbers />} />
         </Routes>
       </Router>
-
-</>
+      <Footer></Footer>
+    </>
   );
 }
-  
+
 
 export default App;

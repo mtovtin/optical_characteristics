@@ -1,59 +1,108 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 // Bootstrap Bundle JS
 import "bootstrap/dist/js/bootstrap.bundle.min";
+import LocalizedStrings from 'react-localization';
 
+let strings = new LocalizedStrings({
+ en:{
+  title:"INDICES OF REFRACTION",
+  subt: "Matter",
+  subt2: "Refractive index",
+  pr: "1 (exact value)",
+  a:"Vacuum",
+  b:"Helium",
+  c:"Air",
+  d:"Carbon dioxide",
+  e:"Ice",
+  f:"Water(20 °C)",
+  g:"Acetone",
+  h:"Teflon",
+  i:"Glycerin",
+  j:"Benzene",
+  k:"Halite",
+ l:"Quartz",
+ m:"Mica",
+ n:"Polyethylene",
+ o:"Glass",
+ p:"Diamond",
+ r:"Gallium arsenide",
+ s:"Silicon" },
+ ua: {
+   title:"ПОКАЗНИКИ ЗАЛОМЛЕННЯ",
+   subt: "Речовина",
+   subt2: "Показник заломлення",
+   pr: "1 (точне значення)",
+   a:"Вакуум",
+   b:"Гелій",
+   c:"Повітря",
+   d:"Вуглекислий газ",
+   e:"Лід",
+   f:"Вода(20 °C)",
+   g:"Ацетон",
+   h:"Тефлон",
+   i:"Гліцерин",
+   j:"Бензол",
+   k:"Кам'яна сіль",
+  l:"Кварц",
+  m:"Слюда",
+  n:"Поліетилен",
+  o:"Скло",
+  p:"Діамант",
+  r:"Арсенід галію",
+  s:"Кремній"
+ }
+});
 
 const OpticalNumbers = () => (
 
 <div style={{margin:'40px'}}>
 
 
-   <h1>ПОКАЗНИКИ ЗАЛОМЛЕННЯ</h1>
+   <h1>{strings.title}</h1>
 
   
   <table className="table table-striped" >
     <thead className="thead-dark">
     <tr>
-      <th >Речовина</th>
-      <th >Показник заломлення
+      <th >{strings.subt}</th>
+      <th >{strings.subt2}
     </th>
     </tr>
     </thead>
     <tbody>
     <tr>
       <td>
-         Вакуум</td>
-      <td>1 (точне значення)</td>
+      {strings.a}</td>
+      <td>{strings.pr}</td>
     </tr>
     <tr>
-      <td>Гелій</td>
+      <td>{strings.b}</td>
       <td>
         1.000036
       </td>
     </tr>
     <tr>
-      <td>Повітря</td>
+      <td>{strings.c}</td>
       <td>1.0002926
      </td>
     </tr>
     <tr>
-      <td>Вуглекислий газ</td>
+      <td>{strings.d}</td>
       <td>1.00045</td>
     </tr>
     <tr>
-      <td>Лід</td>
+      <td>{strings.e}</td>
       <td>1.31
      </td>
     </tr>
     <tr>
-      <td>Вода(20 °C)
+      <td>{strings.f}
     </td>
       <td>1.332986</td>
     </tr>
     <tr>
-      <td>Ацетон</td>
+      <td>{strings.g}</td>
       <td>1.36</td>
     </tr>
     <tr>
@@ -74,47 +123,47 @@ const OpticalNumbers = () => (
       <td>1.5-1.6</td>
     </tr>
     <tr>
-      <td>Тефлон</td>
+      <td>{strings.h}</td>
       <td>1.35 - 1.38</td>
     </tr>
     <tr>
-      <td>Гліцерин</td>
+      <td>{strings.i}</td>
       <td>1,4729</td>
     </tr>
     <tr>
-      <td>Бензол</td>
+      <td>{strings.j}</td>
       <td>1,500</td>
     </tr>
     <tr>
-      <td>Кам'яна сіль</td>
+      <td>{strings.k}</td>
       <td>1.516</td>
     </tr>
     <tr>
-      <td>Кварц</td>
+      <td>{strings.l}</td>
       <td>1,544</td>
     </tr>
     <tr>
-      <td>Слюда</td>
+      <td>{strings.m}</td>
       <td>1,56-1,60</td>
     </tr>
     <tr>
-      <td>Поліетилен</td>
+      <td>{strings.n}</td>
       <td>1.5750</td>
     </tr>
     <tr>
-      <td>Скло</td>
+      <td>{strings.o}</td>
       <td>1.485 - 1.925</td>
     </tr>
     <tr>
-      <td>Діамант</td>
+      <td>{strings.p}</td>
       <td>2.419</td>
     </tr>
     <tr>
-      <td>Арсенід галію</td>
+      <td>{strings.r}</td>
       <td>3.927</td>
     </tr>
     <tr>
-      <td>Кремній</td>
+      <td>{strings.s}</td>
       <td>4.01</td>
     </tr>
   </tbody>
