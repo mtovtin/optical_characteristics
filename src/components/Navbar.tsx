@@ -5,6 +5,7 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 import logo from '../images/logo.png';
 import LocalizedStrings from 'react-localization';
 
+
 let strings = new LocalizedStrings({
     en: {
         home: "Home",
@@ -22,9 +23,9 @@ let strings = new LocalizedStrings({
 
 const Navbar = () => (
 
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav  className="navbar navbar-expand-lg navbar-dark bg-dark">
 
-        <div className="container-fluid justify-content-lg-start justify-content-xs-center  justify-content-md-center justify-content-sm-center text-center ">
+        <div style={{marginLeft:'20px', marginRight:'20px'}} className="container-fluid justify-content-lg-start justify-content-xs-center  justify-content-md-center justify-content-sm-center text-center ">
             <a href="/" className="navbar-brand">
                 <img src={logo} height="66" alt="CoolBrand"></img>
             </a>

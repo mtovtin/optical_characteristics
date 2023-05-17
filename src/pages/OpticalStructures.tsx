@@ -1,5 +1,10 @@
 import React from 'react';
 import LocalizedStrings from 'react-localization';
+import optics1 from '../images/optics1.jpeg';
+import optics2 from '../images/optics2.jpeg';
+import optics3 from '../images/optics3.jpeg';
+import optics4 from '../images/optics4.jpeg';
+import optics5 from '../images/optics5.jpeg';
 
 import { MathComponent } from "mathjax-react";
 let strings = new LocalizedStrings({
@@ -18,8 +23,10 @@ let strings = new LocalizedStrings({
     index of refraction is about 3.5, equal `,
     text13:`The simplest way to reduce the reflection coefficient is to apply an indicator film to the interface
     refraction is smaller than that of the illuminating substance. The reflection coefficient from the "substrate - film - air" system at
-    wavelength <i>&lambda; = 4*D </i>(<i>D</i> is the optical thickness of the film) equal to expression (2): `,
-    text14:`where <i>n<sub>п</sub></i> and <i>n<sub>с</sub> </i> are the refractive indices of the layer and glass, respectively.`,
+    wavelength `,
+    text131:` is the optical thickness of the film) equal to expression (2): `,
+    text14:`where `,
+    text141:` are the refractive indices of the layer and glass, respectively.`,
     text15:`З (6) it follows that at`,
     text16:`In practice, zero reflection is possible only for materials with a high refractive index. Execution of this
     conditions for most glass require the production of a film with a refractive index of 1.2-1.3. Works in this direction
@@ -27,15 +34,17 @@ let strings = new LocalizedStrings({
     the disadvantage of single-layer illumination is the narrow area of low reflection, while the task often arises
     illumination of a wide spectral range. You can use simple two-and for achromatic illumination
     three-layer designs based on quarter-wave and half-wave layers, providing a low-reflection zone
-    with R = 0.4 % in the range of wavelengths from <i>&lambda;<sub>1</sub></i> to
-    <i>&lambda;<sub>2</sub>=1.6*&lambda;<sub>1</sub></i> for glass with a refractive index of 1.46-1.8. coating
+    with R = 0.4 % in the range of wavelengths `,
+    text161:` for glass with a refractive index of 1.46-1.8. coating
     were designed and manufactured for the purpose of application in the visible region of the spectrum. On the basis of layers of unequal thickness (no
     multiples of the quarter-wave layer) it is possible to obtain reflection coefficients not exceeding 0.2-0.3% in the visible part
     spectrum`,
     text17:`In some cases, for example, in various schemes for generating harmonics of the main radiation, there is a need to
     illuminating coatings designed for two wavelengths. Reflection coefficients can be obtained
-    R(<i>&lambda;<sub>1</sub></i>) and R(<i>&lambda;<sub>2</sub></i>), which do not exceed 0.1-0.3% of ratio
-    <i>&lambda;<sub>2</sub></i> : <i>&lambda;<sub>1</sub></i> in the range of values 1.2-2.5 for glass with different indicators
+    R`,
+    text171:` and R`,
+    text172:`, which do not exceed 0.1-0.3% of ratio`,
+    text173:` in the range of values 1.2-2.5 for glass with different indicators
     refraction.`,
     subt2:`Mirror coatings.`,
     text2: `As can be seen from the name, this class of coatings combines interference coatings that
@@ -82,14 +91,16 @@ let strings = new LocalizedStrings({
    text51:`Let's consider some designs of light splitters in more detail. Well-known three-layer coatings, which have an optical thickness
    of the layer adjacent to the substrate, twice as much as the other two layers: П2ВНВ, where В and Н are highly refractive and
    low-refractive layers, P – substrate.`,
-   text52:`With refractive indices <i>n<sub>v</sub>= 2.3-2.4, n<sub>n</sub> = 1.32-1.38 and n<sub>i</sub> = 1.5-1.6</i > that
+   text52:`With refractive indices `,
+   text521:` that
    corresponds, for example, to the ZnS-MgF2 coating on glass, it is possible to obtain the ratio of the reflected R to the transmitted T beam – R
-   : T 1 in the range of the spectrum from <i>&lambda;<sub>1</sub> = 0.72*&lambda;<sub>0</sub> </i> to <i>&lambda;<sub>2</sub > =
-     2.3*&lambda;<sub>1</sub> </i> , where <i>&lambda;<sub>0</sub>/4</i> is the optical thickness of one layer. R and T deviations
+   : T 1 in the range of the spectrum `,
+   text522:` , where `,
+   text523:` is the optical thickness of one layer. R and T deviations
    from the average value in this case does not exceed 10%. More achromatic light splitters with an R : T1 ratio
    can be obtained by increasing the number of layers in the coating. For example, P2VNVNVN and P2VNVNVNP designs are based on the same
-   materials, like the previous design, have in the area <i>&lambda;<sub>1</sub> + &lambda;<sub>2</sub> =
-     1.7*&lambda;<sub>1</sub> </i> deviation from the average value in absolute value of 1 and 4%, respectively.
+   materials, like the previous design, have in the area `,
+   text524:` deviation from the average value in absolute value of 1 and 4%, respectively.
    The described structures are synthesized for the incidence of light at an angle of 45° and without taking into account the polarization of the radiation, which
    is divided It should be noted that the synthesized separators of this type are based on five- and nine-layer ones
    coatings consisting of layers of unequal optical thickness, with characteristics similar to those described above
@@ -148,13 +159,16 @@ consists of two or more mirrors, between which there are separating layers. How 
 used metal, metal-dielectric and dielectric mirrors. The latter are comparatively better because they allow
 get more bounce with less loss. In the case of using dielectric mirrors, the optical thickness
 of the separating layer h is related to the optical thickness of the mirror layers by the ratio h= 2*p* h', where p = 1, 2, 3... - order
-of the filter, and the wavelength of the maximum transmission of the filter &lambda;<sub>max</sub>=2*h/p. By size
-&lambda;<sub>max</sub> and other characteristics of the filters have a great impact on errors in the thickness of the coating layers.
+of the filter, and the wavelength of the maximum transmission of the filter `,
+text811:`=2*h/p. By size`,
+text812:` and other characteristics of the filters have a great impact on errors in the thickness of the coating layers.
 Since the filter coating consists of a fairly large number of layers, the method of controlling their thickness in the process
 application must meet high requirements and the production of VPIF is a rather complex technological task. As
-calculations showed that in dielectric VPFs the absorption coefficient at the wavelength &lambda;<sub>max</sub> in
-10<sup>2</sup>-10<sup>4</sup> times more than mirrors with equivalent thickness. Therefore, even with small ones
-absorption coefficients of layer materials (&chi;=0.0002), the total absorption in the filter can reach 20-40%. It
+calculations showed that in dielectric VPFs the absorption coefficient at the wavelength `,
+text813:` in`,
+text814:` times more than mirrors with equivalent thickness. Therefore, even with small ones
+absorption coefficients of layer materials (`,
+  text815:`=0.0002), the total absorption in the filter can reach 20-40%. It
 imposes additional restrictions on the materials on the basis of which the filter is constructed, and on their technological modes
 manufacturing, as the losses in the layers (absorption and scattering) depend on them.`,
 text81:`One of the problems that arise in the process of production and operation of filters is their optical instability
@@ -205,8 +219,10 @@ distribution of the thickness of the layers on the surface of the element, which
     показник заломлення близько 3.5, рівний `,
     text13:`Найбільш простим способом зменшення коефіцієнта відбивання є нанесення на межу розділу плівки з показником
     заломлення меншим, ніж у просвітлюючої речовини. Коефіцієнт відбивання від системи «підкладка – плівка – повітря» на
-    довжині хвилі <i>&lambda; = 4*D </i>(<i>D</i>- оптична товщина плівки) рівний виразу (2): `,
-    text14:`де <i>n<sub>п</sub></i> i <i>n<sub>с</sub> </i>– показники заломлення плівки і скла відповідно.`,
+    довжині хвилі`, 
+    text131:` оптична товщина плівки) рівний виразу (2): `,
+    text14:`де `,
+    text141:` показники заломлення плівки і скла відповідно.`,
     text15:`З (6) випливає, що при `,
     text16:`На практиці отримати нульове відбивання можливо лише для матеріалів з великим показником заломлення. Виконання цієї
     умови для більшості скла вимагає виготовлення плівки з показником заломлення 1.2-1.3. Роботи в цьому напрямі
@@ -214,15 +230,17 @@ distribution of the thickness of the layers on the surface of the element, which
     недоліком одношарового просвітлення є вузька область низького відбивання, тоді як часто виникає завдання
     просвітлення широкого спектрального діапазону. Можна використовувати для ахроматичного просвітлення прості дво- і
     тришарові конструкції на основі четвертьхвильових та напівхвильових шарів, що забезпечують зону низького відбивання
-    з R = 0.4 % у діапазоні довжин хвиль від <i>&lambda;<sub>1</sub></i> до
-    <i>&lambda;<sub>2</sub>=1.6*&lambda;<sub>1</sub></i> для скла з показником заломлення 1.46-1.8. покриття
+    з R = 0.4 % у діапазоні довжин хвиль `,
+    text161:` для скла з показником заломлення 1.46-1.8. покриття
     конструювалися і виготовлялися з метою застосування у видимій області спектру. На основі нерівнотовщинних шарів (не
     кратних чвертьхвильовому шару) можна отримати коефіцієнти відбивання, що не перевищують 0.2-0.3 % у видимій частини
     спектру.`,
     text17:`В окремих випадках, наприклад, в різних схемах генерації гармонік основного випромінювання виникає потреба в
     просвітлюючих покриттях, розрахованих на дві довжини хвилі. Можна отримати коефіцієнти відбивання
-    R(<i>&lambda;<sub>1</sub></i>) і R(<i>&lambda;<sub>2</sub></i>) , що не перевищують 0.1-0.3 % із співвідношенням
-    <i>&lambda;<sub>2</sub></i> : <i>&lambda;<sub>1</sub></i> в інтервалі значень 1.2-2.5 для скла з різними показниками
+    R`,
+    text171:` і R`,
+    text172:` , що не перевищують 0.1-0.3 % із співвідношенням`,
+    text173:` в інтервалі значень 1.2-2.5 для скла з різними показниками
     заломлення.`,
     subt2:`Дзеркальні покриття.`,
     text2: `Як видно з назви, цей клас покриттів об'єднує інтерференційні покриття, що
@@ -270,14 +288,16 @@ distribution of the thickness of the layers on the surface of the element, which
    text51:`Розглянемо деякі конструкції світлорозділювачів докладніше. Добре відомі тришарові покриття, у яких оптична товщина
    шару, прилеглого до підкладки, в два рази більше двох інших шарів: П2ВНВ, де В і Н – високозаломлюючий і
    низькозаломлюючий шари, П – підкладка. `,
-   text52:`При показниках заломлення <i>n<sub>в</sub>= 2.3-2.4, n<sub>н</sub> = 1.32-1.38 і n<sub>і</sub> = 1.5-1.6</i>, що
+   text52:`При показниках заломлення `,
+   text521:`, що
    відповідає, наприклад, покриттю ZnS-MgF2 на склі, можна отримати відношення відбитого R до пройшовшого T променя – R
-   : T 1 в області спектру від <i>&lambda;<sub>1</sub> = 0.72*&lambda;<sub>0</sub> </i> до <i>&lambda;<sub>2</sub> =
-     2.3*&lambda;<sub>1</sub> </i> , де <i>&lambda;<sub>0</sub>/4</i> – оптична товщина одного шару. Відхилення R і T
+   : T 1 в області спектру `,
+   text522:` , де `,
+   text523:` – оптична товщина одного шару. Відхилення R і T
    від середнього значення в цьому випадку не перевищує 10%. Більш ахроматичні світлорозділювачі з відношенням R : T1
    можна отримати, збільшуючи число шарів в покритті. Наприклад, конструкції П2НВНВН і П2ВНВНВНП на основі тих же
-   матеріалів, що і попередня конструкція, мають в області <i>&lambda;<sub>1</sub> + &lambda;<sub>2</sub> =
-     1.7*&lambda;<sub>1</sub> </i> відхилення від середнього значення по абсолютній величині 1 і 4 % відповідно.
+   матеріалів, що і попередня конструкція, мають в області `,
+   text524:` відхилення від середнього значення по абсолютній величині 1 і 4 % відповідно.
    Описані конструкції синтезовані для падіння світла під кутом 45° і без урахування поляризації випромінювання, що
    розділяється. Необхідно відзначити, що синтезовані розділювачі такого типу на основі п’яти-і девятислойних
    покриттів, що складаються з шарів нерівної оптичної товщини, по своїх характеристиках близькі до описаним вище
@@ -336,13 +356,16 @@ text8:`Вузькополосні пропускаючі інтерференц�
 використані металічні, метало-діелектричні і діелектричні дзеркала. Останні порівняно кращі, оскільки дозволяють
 отримувати більше відбивання при менших втратах. У разі застосування діелектричних дзеркал оптична товщина
 розділяючого шару hпов'язана з оптичною товщиною шарів дзеркал співвідношенням h= 2*p* h', де p = 1, 2, 3… - порядок
-фільтру, а довжина хвилі максимуму пропускання фільтра &lambda;<sub>max</sub>=2*h/p. На величину
-&lambda;<sub>max</sub> та інші характеристики фільтрів великий вплив роблять помилки в товщині шарів покриття.
+фільтру, а довжина хвилі максимуму пропускання фільтра `,
+text811:`=2*h/p. На величину`,
+text812:` та інші характеристики фільтрів великий вплив роблять помилки в товщині шарів покриття.
 Оскільки покриття фільтру складається з досить великого числа шарів, то до способу контролю їх товщини в процесі
 нанесення повинні пред'являтися високі вимоги і виготовлення ВПІФ є достатньо складним технологічним завданням. Як
-показали розрахунки, у діелектричних ВПІФ коефіцієнт поглинання на довжині хвилі &lambda;<sub>max</sub> в
-10<sup>2</sup>-10<sup>4</sup> раз більше, ніж у дзеркал з еквівалентною товщиною. Тому навіть при невеликих
-коефіцієнтах поглинання матеріалів шарів ( &chi;=0.0002) сумарне поглинання у фільтрі може досягати 20-40 %. Це
+показали розрахунки, у діелектричних ВПІФ коефіцієнт поглинання на довжині хвилі `,
+text813:` в`,
+text814:` раз більше, ніж у дзеркал з еквівалентною товщиною. Тому навіть при невеликих
+коефіцієнтах поглинання матеріалів шарів (`,
+  text815:`=0.0002) сумарне поглинання у фільтрі може досягати 20-40 %. Це
 накладає додаткові обмеження на матеріали, на основі яких конструюється фільтр, і на технологічні режими їх
 виготовлення, оскільки від них залежать втрати в шарах (поглинання і розсіювання).`,
 text81:`Однією з проблем, що виникають в процесі виробництва і при експлуатації фільтрів, є нестабільність їх оптичних
@@ -388,51 +411,53 @@ const OpticalStructures = () => (
 <div className='info'>
 
   <h1>{strings.title}</h1>
+  <div className='filtersImageDiv'><img src={optics1}  className='filtersImage' alt="Optical Filters"></img></div>
   <p>
-    <b>{strings.subt1}</b> {strings.text1}
+    <h2>{strings.subt1}</h2> {strings.text1}
   </p>
 
   <p> <MathComponent tex={String.raw`R = \left(\frac{n-1}{n+1} \right)^2, (1)`} /> </p>
 
   <p>{strings.text12} &asymp; 30 %.</p>
 
-  <p>{strings.text13}</p>
+  <p>{strings.text13} <i>&lambda; = 4*D </i>(<i>D</i> {strings.text131}</p>
 
   <p> <MathComponent tex={String.raw`R = \left(\frac{n_п-n_с^2}{n_п+n_с^2} \right)^2, (2)`} /> </p>
 
-  <p>{strings.text14}</p>
+  <p>{strings.text14} <i>n<sub>п</sub></i>, <i>n<sub>с</sub></i> –{strings.text141}</p>
 
-  <p>{strings.text15}<i>n<sub>п</sub></i> &asymp; <i>n<sub>с</sub></i><sup> &frac12;</sup> , <i>R &asymp; 0</i>.
+  <p>{strings.text15} <i>n<sub>п</sub></i> &asymp; <i>n<sub>с</sub></i><sup> &frac12;</sup> , <i>R &asymp; 0</i>.
   </p>
 
-  <p>{strings.text16}</p>
+  <p>{strings.text16}<i>&lambda;<sub>1</sub></i> - <i>&lambda;<sub>2</sub>=1.6*&lambda;<sub>1</sub></i>{strings.text161}</p>
 
-  <p>{strings.text17}</p>
+  <p>{strings.text17}(<i>&lambda;<sub>1</sub></i>){strings.text171}(<i>&lambda;<sub>2</sub></i>){strings.text172} <i>&lambda;<sub>2</sub></i> : <i>&lambda;<sub>1</sub></i>{strings.text173}</p>
 
-
-  <p><b>{strings.subt2}</b> {strings.text2} </p>
+	<div className='filtersImageDiv'><img src={optics2}  className='filtersImage' alt="Optical Filters"></img></div>
+  <p><h2>{strings.subt2}</h2> {strings.text2} </p>
 
   <p>{strings.text3} </p>
 
   <p>{strings.text4} </p>
 
-
   <p><b>{strings.subt5}</b> {strings.text5} </p>
 
   <p>{strings.text51}</p>
 
-  <p>{strings.text52}</p>
+  <p>{strings.text52}<i>n<sub>v</sub>= 2.3-2.4, n<sub>n</sub> = 1.32-1.38, n<sub>i</sub> = 1.5-1.6</i >{strings.text521}<i>&lambda;<sub>1</sub> = 0.72*&lambda;<sub>0</sub> </i> - <i>&lambda;<sub>2</sub > =
+     2.3*&lambda;<sub>1</sub> </i>{strings.text522}<i>&lambda;<sub>0</sub>/4</i>{strings.text523}<i>&lambda;<sub>1</sub> + &lambda;<sub>2</sub> =
+     1.7*&lambda;<sub>1</sub> </i>{strings.text524}</p>
 
-
-  <p><b>{strings.subt6}</b> {strings.text6}</p>
+     <div className='filtersImageDiv'><img src={optics3}  className='filtersImage' alt="Optical Filters"></img></div>
+  <p><h2>{strings.subt6}</h2> {strings.text6}</p>
 
   <p>{strings.text61}</p>
 
   <p>{strings.text62}</p>
 
   <p>{strings.text63} </p>
-
-  <p><b>{strings.subt7}</b> {strings.text7} </p>
+	<div className='filtersImageDiv'><img src={optics4}  className='filtersImage' alt="Optical Filters"></img></div>
+  <p><h2>{strings.subt7}</h2> {strings.text7} </p>
 
   {/* <p> <MathComponent tex={String.raw`&phi;_в = arctg\frac{n_н}{n_в} \text { та } &phi;_н = arctg\frac{n_в}{n_н} `} /> </p>
 
@@ -455,7 +480,7 @@ const OpticalStructures = () => (
   <p>{strings.text72} </p>
 
 
-  <p><b>{strings.subt8}</b> {strings.text8} </p>
+  <p><b>{strings.subt8}</b> {strings.text8}&lambda;<sub>max</sub>{strings.text811} &lambda;<sub>max</sub>{strings.text812}&lambda;<sub>max</sub>{strings.text813} 10<sup>2</sup>-10<sup>4</sup>{strings.text814}&chi;{strings.text815}</p>
 
   <p>{strings.text81} </p>
 
@@ -470,8 +495,9 @@ const OpticalStructures = () => (
 
   <p>{strings.text84} </p>
 
+	<div className='filtersImageDiv'><img src={optics5}  className='filtersImage' alt="Optical Filters"></img></div>
 
-  <p><b>{strings.subt9}</b> {strings.text9} </p>
+  <p><h2>{strings.subt9}</h2> {strings.text9} </p>
 
   <p>{strings.text91} </p>
 

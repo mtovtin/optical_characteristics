@@ -1,4 +1,5 @@
 import React from 'react';
+import optics from '../images/Color-Optics.jpg';
 
 import LocalizedStrings from 'react-localization';
 
@@ -19,8 +20,9 @@ const Home = () => (
 <div className='info'>
 	<h1>{strings.title}</h1>
 	<div>
+	<div className='filtersImageDiv'><img src={optics}  className='filtersImage' alt="Optical Filters"></img></div>
 		<p>{strings.firstParagraph}</p>
-		 <p>{strings.secondParagraph}</p>
+		 <p style={{marginTop:'-40px'}}>{strings.secondParagraph}</p>
 	</div>
 
     </div>

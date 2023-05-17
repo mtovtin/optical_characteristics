@@ -47,13 +47,20 @@
   color: rgb(48, 45, 45);
 }
 h1{
+  margin-top: 20px;
   text-align: center;
   font-size:2rem;
 font-weight: bold;
 }
+
+h2{
+text-align: center;
+  font-size:1.7rem;
+font-weight: bold;
+}
 p{
   text-indent: 2rem;
-
+font-size: 24px;
 }
 /* p:not(:last-child){
   margin-bottom: -3rem;
@@ -73,4 +80,37 @@ footer {
 
 #footer a{
   color: white;
+}
+.filtersImage{
+  width: 600px;
+}
+
+.filtersImageDiv {
+  text-align:center;
+  margin: 30px;
+}
+
+@media screen and (max-width: 700px) {
+  
+  .filtersImage{
+    width: 360px;
+  }
+  h1{
+    text-align: center;
+    font-size:1.5rem;
+  font-weight: bold;
+  }
+  h2{
+    text-align: center;
+    font-size:1.5rem;
+  font-weight: bold;
+  }
+  p{
+    text-indent: 2rem;
+  font-size: 22px;
+  }
+}
+
+.nav-link{
+  font-size: 26px;
 }
