@@ -13,14 +13,23 @@ let strings = new LocalizedStrings({
     ua: {
         contact: "Зворотній зв'язок: "
     }
+    
 });
 
-const Footer = () => (
 
 
+function Footer (props: { language: string; }){
+
+    if(props.language==='en'){
+        strings.setLanguage('en')
+      }	else {
+        strings.setLanguage('ua')
+      }
+    return (
     <nav id='footer' className="navbar navbar-dark bg-dark">
         <div style={{color:'white'}}>{strings.contact} <a style={{color:'white'}} href = "optical.filters.uzhnu@gmail.com">optical.filters.uzhnu@gmail.com</a></div>
         </nav>
-);
+    );
+};
 
 export default Footer;

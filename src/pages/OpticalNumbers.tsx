@@ -54,9 +54,13 @@ let strings = new LocalizedStrings({
  }
 });
 
-const OpticalNumbers = () => (
-
-<div style={{margin:'40px'}}>
+function OpticalNumbers(props: { language: string; }) {
+  if(props.language==='en'){
+    strings.setLanguage('en')
+  }	else {
+    strings.setLanguage('ua')
+  }
+return <div style={{margin:'40px'}}>
 
 
    <h1>{strings.title}</h1>
@@ -171,6 +175,6 @@ const OpticalNumbers = () => (
 
 </div>
 
-);
+};
 
 export default OpticalNumbers;

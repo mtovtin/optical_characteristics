@@ -16,8 +16,13 @@ secondParagraph:"Сьогодні особливої актуальності н
  }
 });
 
-const Home = () => (
-<div className='info'>
+function Home(props: { language: string; }) {
+if(props.language==='en'){
+	strings.setLanguage('en')
+}	else {
+	strings.setLanguage('ua')
+}
+return <div className='info'>
 	<h1>{strings.title}</h1>
 	<div>
 	<div className='filtersImageDiv'><img src={optics}  className='filtersImage' alt="Optical Filters"></img></div>
@@ -26,6 +31,6 @@ const Home = () => (
 	</div>
 
     </div>
-    );
+	};
 
 export default Home;

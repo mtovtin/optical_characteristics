@@ -90,6 +90,11 @@ footer {
   margin: 30px;
 }
 
+#nb {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
 @media screen and (max-width: 700px) {
   
   .filtersImage{
@@ -109,8 +114,21 @@ footer {
     text-indent: 2rem;
   font-size: 22px;
   }
+
+  #nbb{
+    margin-left: -30px;
+  }
+
 }
 
 .nav-link{
   font-size: 26px;
 }
+
+#flagButton {
+  border: 0px;
+  background-size: 36px 20px;
+  height: 20px;
+  width: 36px;
+}
+

@@ -4,7 +4,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import logo from '../images/logo.png';
 import LocalizedStrings from 'react-localization';
-
+import buttonFlagUA from '../images/flagu.png'
+import buttonFlagUK from '../images/flagb.webp'
 
 let strings = new LocalizedStrings({
     en: {
@@ -21,19 +22,28 @@ let strings = new LocalizedStrings({
     }
 });
 
-const Navbar = () => (
+function Navbar(props:any) {
+    let buttonImage
+    if(props.language==='en'){
+        strings.setLanguage('en');
+        buttonImage = buttonFlagUK
+      }	else {
+        strings.setLanguage('ua');
+        buttonImage = buttonFlagUA
+      }
+  return  <nav  className="navbar navbar-expand-sm navbar-dark bg-dark">
 
-    <nav  className="navbar navbar-expand-lg navbar-dark bg-dark">
-
-        <div style={{marginLeft:'20px', marginRight:'20px'}} className="container-fluid justify-content-lg-start justify-content-xs-center  justify-content-md-center justify-content-sm-center text-center ">
+        <div id='nb' className="container-fluid justify-content-lg-start justify-content-xs-center  justify-content-md-center justify-content-sm-center text-center ">
             <a href="/" className="navbar-brand">
                 <img src={logo} height="66" alt="CoolBrand"></img>
             </a>
-            <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
+            
+            <button id='nbb' className="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
+            
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                     <li className="nav-item">
@@ -54,12 +64,13 @@ const Navbar = () => (
 
                 </ul>
             </div>
+            <button id='flagButton' style={{backgroundImage:'url(' + buttonImage + ')'}} onClick={()=>{props.func(props.language==='en'?'ua':'en');}}></button>
         </div>
     </nav>
 
 
 
 
-);
+};
 
 export default Navbar;

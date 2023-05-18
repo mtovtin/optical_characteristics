@@ -404,11 +404,15 @@ text92:`Особливий тип покриттів складають покр
   }
  });
 
-const OpticalStructures = () => (
+function OpticalStructures(props: { language: string; }) {
 
+  if(props.language==='en'){
+    strings.setLanguage('en')
+  }	else {
+    strings.setLanguage('ua')
+  }
 
-
-<div className='info'>
+return <div className='info'>
 
   <h1>{strings.title}</h1>
   <div className='filtersImageDiv'><img src={optics1}  className='filtersImage' alt="Optical Filters"></img></div>
@@ -505,6 +509,6 @@ const OpticalStructures = () => (
   </p>
 </div>
 
-    );
+};
 
 export default OpticalStructures;
