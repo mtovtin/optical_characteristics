@@ -132,3 +132,11 @@ footer {
   width: 36px;
 }
 
+.ttl{
+  font-family:"Arial","serif";
+  margin-top: 20px;
+  text-align: center;
+  font-size:2rem !important;
+font-weight: bold !important;
+color: #282c34 !important;
+}
