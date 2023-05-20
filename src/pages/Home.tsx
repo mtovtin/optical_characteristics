@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { createContext, useContext } from 'react';
 import optics from '../images/Color-Optics.jpg';
 
 import LocalizedStrings from 'react-localization';
@@ -16,8 +16,10 @@ secondParagraph:"Сьогодні особливої актуальності н
  }
 });
 
-function Home(props: { language: string; }) {
-if(props.language==='en'){
+
+function Home(props: { language: any; }) {
+	const language = useContext(props.language);
+if(language==='en'){
 	strings.setLanguage('en')
 }	else {
 	strings.setLanguage('ua')

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 // Bootstrap Bundle JS
 import "bootstrap/dist/js/bootstrap.bundle.min";
@@ -54,8 +54,9 @@ let strings = new LocalizedStrings({
  }
 });
 
-function OpticalNumbers(props: { language: string; }) {
-  if(props.language==='en'){
+function OpticalNumbers(props: { language: any; }) {
+  const language = useContext(props.language);
+  if(language==='en'){
     strings.setLanguage('en')
   }	else {
     strings.setLanguage('ua')
