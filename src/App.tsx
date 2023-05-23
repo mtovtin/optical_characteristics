@@ -30,11 +30,11 @@ function App() {
       <Router>
         <Routes>
           <Route path="/optical_characteristics" element={<Home />} />
-          <Route path="/structures" element={<OpticalStructures language={language}/>} />
-          <Route path="/numbers" element={<OpticalNumbers language={language}/>} />
-          <Route path="/polarization" element={<Display language={language}/>} />
-          <Route path="/light_at_angle" element={<Page1 language={language}/>} />
-          <Route path="/optimization" element={<Page2 language={language}/>} />
+          <Route path="/optical_characteristics/structures" element={<OpticalStructures language={language}/>} />
+          <Route path="/optical_characteristics/numbers" element={<OpticalNumbers language={language}/>} />
+          <Route path="/optical_characteristics/polarization" element={<Display language={language}/>} />
+          <Route path="/optical_characteristics/light_at_angle" element={<Page1 language={language}/>} />
+          <Route path="/optical_characteristics/optimization" element={<Page2 language={language}/>} />
         </Routes>
       </Router>
       <Footer language={language}></Footer>
