@@ -65,18 +65,18 @@ function Navbar(props: any) {
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                     <li className="nav-item">
-                        <a className="nav-link " aria-current="page" href='/'>{strings.home}</a>
+                        <a className="nav-link " aria-current="page" href='/optical_characteristics'>{strings.home}</a>
                     </li>
                     <li className="nav-item dropdown">
                         <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             {strings.os}
                         </a>
                         <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a className="dropdown-item" href="/structures" target='frame1'>{strings.modern}</a></li>
+                            <li><a className="dropdown-item" href="/optical_characteristics/structures" target='frame1'>{strings.modern}</a></li>
                             <li>
                                 <hr className="dropdown-divider"></hr>
                             </li>
-                            <li><a className="dropdown-item" href="/numbers" target='frame1'>{strings.indices}</a></li>
+                            <li><a className="dropdown-item" href="/optical_characteristics//numbers" target='frame1'>{strings.indices}</a></li>
                         </ul>
                     </li>
 
@@ -87,15 +87,15 @@ function Navbar(props: any) {
                         {strings.transmissioncoefficient}
                         </a>
                         <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a className="dropdown-item" href="/light_at_angle" target='frame1'>{strings.movement}</a></li>
+                            <li><a className="dropdown-item" href="/optical_characteristics/light_at_angle" target='frame1'>{strings.movement}</a></li>
                             <li>
                                 <hr className="dropdown-divider"></hr>
                             </li>
-                            <li><a className="dropdown-item" href="/optimization" target='frame1'>{strings.opt}</a></li>
+                            <li><a className="dropdown-item" href="/optical_characteristics/optimization" target='frame1'>{strings.opt}</a></li>
                         </ul>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link active" aria-current="page" href='/polarization'>{strings.polarization}</a>
+                        <a className="nav-link active" aria-current="page" href='/optical_characteristics/polarization'>{strings.polarization}</a>
                     </li>
                 </ul>
             </div>
