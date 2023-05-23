@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 // Bootstrap Bundle JS
 import "bootstrap/dist/js/bootstrap.bundle.min";
@@ -6,8 +6,14 @@ import logo from '../images/logo.png';
 import LocalizedStrings from 'react-localization';
 import buttonFlagUA from '../images/flagu.png'
 import buttonFlagUK from '../images/flagb.webp'
+import { useLanguage } from '../Hooks/useLanguage';
+import { LanguageContext } from '../Context/myContext';
+import { LanguageContextType } from '../Interfaces/PropsInteface';
 
-let strings = new LocalizedStrings({
+
+function Navbar(props: any) {
+	const {language} = useContext(LanguageContext) as LanguageContextType;
+    let data = {
     en: {
         home: "Home",
         os: "Optical structures",
@@ -15,7 +21,9 @@ let strings = new LocalizedStrings({
         indices: "Refractive indices of materials",
         page:"Page",
         transmissioncoefficient:"Transmission coefficient",
-        polarization:"Polarization"
+        polarization:"Polarization",
+        movement: "Movement of light at an angle",
+        opt: "Optimization of parameters"
     },
     ua: {
         home: "Головна",
@@ -24,19 +32,23 @@ let strings = new LocalizedStrings({
         indices: "Показники заломлення матеріалів",
         page:"Сторінка",
         transmissioncoefficient:"Коефіцієнт пропускання",
-        polarization:"Поляризація"
+        polarization:"Поляризація",
+        movement: "Рух світла під кутом",
+        opt: "Оптимізація параметрів"
     }
-});
+}
+    // const {language, setLanguage} = useLanguage();
 
-function Navbar(props:any) {
-    let buttonImage
-    if(props.language==='en'){
-        strings.setLanguage('en');
-        buttonImage = buttonFlagUK
-      }	else {
-        strings.setLanguage('ua');
-        buttonImage = buttonFlagUA
-      }
+    const {update} = useContext(LanguageContext) as LanguageContextType;
+    const [strings, setStrings] = useState(language==="en"?data["en"]:data["ua"]||null);
+    useEffect(()=>{setStrings(language==="en"?data["en"]:data["ua"]||null)},[language])
+    const [buttonImage, setButtonImage]=useState(language==='ua'?buttonFlagUA:buttonFlagUK);
+
+    useEffect(()=>{
+        setButtonImage(language==='ua'?buttonFlagUA:buttonFlagUK);
+    },[language])
+
+
   return  <nav  className="navbar navbar-expand-md navbar-dark bg-dark">
 
         <div id='nb' className="container-fluid justify-content-lg-start justify-content-xs-center  justify-content-md-center justify-content-sm-center text-center ">
@@ -67,18 +79,27 @@ function Navbar(props:any) {
                             <li><a className="dropdown-item" href="/numbers" target='frame1'>{strings.indices}</a></li>
                         </ul>
                     </li>
-                    <li className="nav-item">
-                        <a className="nav-link" aria-current="page" href='/page'>{strings.page}</a>
-                    </li>
-                    <li className="nav-item">
-                        <a className="nav-link" aria-current="page" href='/coefficient'>{strings.transmissioncoefficient}</a>
+
+
+
+                    <li className="nav-item dropdown">
+                        <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        {strings.transmissioncoefficient}
+                        </a>
+                        <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a className="dropdown-item" href="/light_at_angle" target='frame1'>{strings.movement}</a></li>
+                            <li>
+                                <hr className="dropdown-divider"></hr>
+                            </li>
+                            <li><a className="dropdown-item" href="/optimization" target='frame1'>{strings.opt}</a></li>
+                        </ul>
                     </li>
                     <li className="nav-item">
                         <a className="nav-link active" aria-current="page" href='/polarization'>{strings.polarization}</a>
                     </li>
                 </ul>
             </div>
-            <button id='flagButton' style={{backgroundImage:'url(' + buttonImage + ')'}} onClick={()=>{props.func(props.language==='en'?'ua':'en');}}></button>
+            <button id='flagButton' style={{backgroundImage:'url(' + buttonImage + ')'}} onClick={()=>update(language==='ua'?'en':'ua')}></button>
         </div>
     </nav>
 

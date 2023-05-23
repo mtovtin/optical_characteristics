@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
@@ -7,7 +7,7 @@ import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Send from '@mui/icons-material/Send'
 import { AccordionLayer } from "../../../components/AccordionLayer";
-import { LayerParams, ResultCalculationForChart, ResultOptimization } from "../../../Interfaces/PropsInteface";
+import { LanguageContextType, LayerParams, ResultCalculationForChart, ResultOptimization } from "../../../Interfaces/PropsInteface";
 import { Slider, TextField, Button, FormGroup, FormControlLabel, Checkbox, RadioGroup, FormControl, Radio } from "@mui/material";
 import { Calculation } from "../Calculation";
 import DisplayChart from "../../DisplayChart";
@@ -21,52 +21,57 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import LocalizedStrings from 'react-localization';
+import { LanguageContext } from "../../../Context/myContext";
 
-let strings = new LocalizedStrings({
- en:{
-   par1:"Structure parameters",
-   par2:"Structure parameters",
-   par3:"Structure parameters",
-   ind1:"Refractive index of the medium",
-   ind2:"Refractive index of the substrate",
-   layers:"Number of layers",
-   freq:"Frequency",
-   layer:"Layer",
-   angles:"Angles of incidence",
-   graph:"Graph",
-   refr:"Refractive index",
-   density:"Density",
-   apply:"APPLY",
-   showgraph:"SHOW GRAPH",
-   layern:"Layer number",
-   opt:"The optimal value of the transmission coefficient"
-},
- ua: {
-    par1:"Параметри структури",
-    par2:"Параметри структури",
-    par3:"Параметри структури",
-    ind1:"Показник заломлення середовища",
-    ind2:"Показник заломлення підкладки",
-    layers:"Кількість шарів",
-    freq:"Частота",
-    layer:"Шар",
-    angles:"Кути падіння",
-    graph:"Графік",
-    refr:"Показник заломлення",
-    density:"Товщина",
-    apply:"ПРИЙНЯТИ",
-    showgraph:"ПОКАЗАТИ ГРАФІК",
-    layern:"Номер шару",
-    opt:"Оптимальне значення коефіцієнта пропускання"
-  }
-});
+
 
 function Page2(props: { language: string; }) {
-    if(props.language==='en'){
-        strings.setLanguage('en')
-    }	else {
-        strings.setLanguage('ua')
-    }
+    const {language} = useContext(LanguageContext) as LanguageContextType;
+    let data2 = {
+        en:{
+          par1:"Structure parameters",
+          par2:"Structure parameters",
+          par3:"Structure parameters",
+          ind1:"Refractive index of the medium",
+          ind2:"Refractive index of the substrate",
+          layers:"Number of layers",
+          freq:"Frequency",
+          layer:"Layer",
+          angles:"Angles of incidence",
+          graph:"Graph",
+          refr:"Refractive index",
+          density:"Density",
+          apply:"APPLY",
+          showgraph:"SHOW GRAPH",
+          layern:"Layer number",
+          opt:"The optimal value of the transmission coefficient"
+       },
+        ua: {
+           par1:"Параметри структури",
+           par2:"Параметри структури",
+           par3:"Параметри структури",
+           ind1:"Показник заломлення середовища",
+           ind2:"Показник заломлення підкладки",
+           layers:"Кількість шарів",
+           freq:"Частота",
+           layer:"Шар",
+           angles:"Кути падіння",
+           graph:"Графік",
+           refr:"Показник заломлення",
+           density:"Товщина",
+           apply:"ПРИЙНЯТИ",
+           showgraph:"ПОКАЗАТИ ГРАФІК",
+           layern:"Номер шару",
+           opt:"Оптимальне значення коефіцієнта пропускання"
+         }
+       };
+
+       const [strings, setStrings] = useState(language==="en"?data2["en"]:data2["ua"]||null);
+
+
+
+       useEffect(()=>{setStrings(language==="en"?data2["en"]:data2["ua"]||null)},[language])
+
     const [listOfLayerParams, setListOfLayerParams] = React.useState<LayerParams[]>([]);
     const [spectrumRange, setSpectrumRange] = React.useState<number[]>([20, 37]);
     const [angle, setAngle] = React.useState<number>(1);

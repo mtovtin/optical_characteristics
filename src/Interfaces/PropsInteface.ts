@@ -68,6 +68,11 @@ class LayerParams {
     }
 }
 
+export type LanguageContextType = {
+    language: string;
+    update: (ln: string) => void;
+  };
+
 export type {ResultOptimization, PropAccordionLayer, PropCalculation, ResultCalculationForChart, ResultCalculation, PropsOptimization }
 export { LayerParams }
 

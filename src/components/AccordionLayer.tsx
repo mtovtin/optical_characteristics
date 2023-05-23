@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
@@ -7,34 +7,36 @@ import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import Send from '@mui/icons-material/Send'
 
-import { PropAccordionLayer } from "../Interfaces/PropsInteface"
+import { LanguageContextType, PropAccordionLayer } from "../Interfaces/PropsInteface"
 import { Box, Button, TextField } from "@mui/material";
 
 import '../pages/Transmittance/style.css'
 import LocalizedStrings from 'react-localization';
+import { LanguageContext } from "../Context/myContext";
 
-let strings = new LocalizedStrings({
- en:{
-   layer:"Layer",
-   density:"Density",
-   ind:"Refractive index",
-   apply:"APPLY"
-},
- ua: {
-  layer:"Шар",
-  density:"Товщина",
-  ind:"Показник заломлення", 
-  apply:"ПРИЙНЯТИ"
-  }
-});
+
+
 
 
 export function AccordionLayer(props: { language: string; n: number | (() => number); d: number | (() => number); handlerChangeParam: (arg0: any, arg1: number, arg2: number) => void; index: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | React.ReactFragment | React.ReactPortal | null | undefined; }) {
-  if(props.language==='en'){
-    strings.setLanguage('en')
-}	else {
-    strings.setLanguage('ua')
-}
+	const {language} = useContext(LanguageContext) as LanguageContextType;
+    let data = {
+    en:{
+      layer:"Layer",
+      density:"Density",
+      ind:"Refractive index",
+      apply:"APPLY"
+   },
+    ua: {
+     layer:"Шар",
+     density:"Товщина",
+     ind:"Показник заломлення", 
+     apply:"ПРИЙНЯТИ"
+     }
+};
+
+const [strings, setStrings] = useState(language==="en"?data["en"]:data["ua"]||null);
+useEffect(()=>{setStrings(language==="en"?data["en"]:data["ua"]||null)},[language])
   const [refractiveIndex, setRefractiveIndex] = React.useState<number>(props.n)
   const [thickness, setThickness] = React.useState<number>(props.d)
 

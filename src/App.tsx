@@ -11,34 +11,35 @@ import LocalizedStrings from 'react-localization';
 import Page1 from './pages/Transmittance/Page1/Page1';
 import Page2 from './pages/Transmittance/Page2/Page2';
 import { Language } from '@mui/icons-material';
-
+import { useLanguage } from './Hooks/useLanguage';
 
 function App() {
 
-  const [language, setLanguage] = useState('en');
+  const [language, setLanguage] = useState<string>('ua');
 
-  const pull_data = (data: string) => {
-  setLanguage(data)
-  }
-  const UserContext = createContext(language);
+  // const pull_data = (data: string) => {
+  //   window.localStorage.setItem('language',data)
+  // setLanguage(data)
+  // }
+
 
   return (
-    <UserContext.Provider value = {language}>
-    <>
-      <Navbar language={language} func={pull_data}></Navbar>
+
+<>
+      <Navbar setLanguage={setLanguage}></Navbar>
       <Router>
         <Routes>
-          <Route path="/" element={<Home language={UserContext}/>} />
+          <Route path="/" element={<Home />} />
           <Route path="/structures" element={<OpticalStructures language={language}/>} />
-          <Route path="/numbers" element={<OpticalNumbers language={UserContext}/>} />
+          <Route path="/numbers" element={<OpticalNumbers language={language}/>} />
           <Route path="/polarization" element={<Display language={language}/>} />
-          <Route path="/page" element={<Page1 language={language}/>} />
-          <Route path="/coefficient" element={<Page2 language={language}/>} />
+          <Route path="/light_at_angle" element={<Page1 language={language}/>} />
+          <Route path="/optimization" element={<Page2 language={language}/>} />
         </Routes>
       </Router>
       <Footer language={language}></Footer>
-    </>
-    </UserContext.Provider>
+
+</>
   );
 }
 

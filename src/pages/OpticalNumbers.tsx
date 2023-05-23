@@ -1,66 +1,71 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 // Bootstrap Bundle JS
 import "bootstrap/dist/js/bootstrap.bundle.min";
 import LocalizedStrings from 'react-localization';
+import { LanguageContext } from '../Context/myContext';
+import { LanguageContextType } from '../Interfaces/PropsInteface';
 
-let strings = new LocalizedStrings({
- en:{
-  title:"INDICES OF REFRACTION",
-  subt: "Matter",
-  subt2: "Refractive index",
-  pr: "1 (exact value)",
-  a:"Vacuum",
-  b:"Helium",
-  c:"Air",
-  d:"Carbon dioxide",
-  e:"Ice",
-  f:"Water(20 °C)",
-  g:"Acetone",
-  h:"Teflon",
-  i:"Glycerin",
-  j:"Benzene",
-  k:"Halite",
- l:"Quartz",
- m:"Mica",
- n:"Polyethylene",
- o:"Glass",
- p:"Diamond",
- r:"Gallium arsenide",
- s:"Silicon" },
- ua: {
-   title:"ПОКАЗНИКИ ЗАЛОМЛЕННЯ",
-   subt: "Речовина",
-   subt2: "Показник заломлення",
-   pr: "1 (точне значення)",
-   a:"Вакуум",
-   b:"Гелій",
-   c:"Повітря",
-   d:"Вуглекислий газ",
-   e:"Лід",
-   f:"Вода(20 °C)",
-   g:"Ацетон",
-   h:"Тефлон",
-   i:"Гліцерин",
-   j:"Бензол",
-   k:"Кам'яна сіль",
-  l:"Кварц",
-  m:"Слюда",
-  n:"Поліетилен",
-  o:"Скло",
-  p:"Діамант",
-  r:"Арсенід галію",
-  s:"Кремній"
- }
-});
+
 
 function OpticalNumbers(props: { language: any; }) {
-  const language = useContext(props.language);
-  if(language==='en'){
-    strings.setLanguage('en')
-  }	else {
-    strings.setLanguage('ua')
-  }
+	const {language} = useContext(LanguageContext) as LanguageContextType;
+  // const language = useContext(props.language);
+  // if(language==='en'){
+  //   strings.setLanguage('en')
+  // }	else {
+  //   strings.setLanguage('ua')
+  // }
+  let data = {
+    en:{ title:"INDICES OF REFRACTION",
+     subt: "Matter",
+     subt2: "Refractive index",
+     pr: "1 (exact value)",
+     a:"Vacuum",
+     b:"Helium",
+     c:"Air",
+     d:"Carbon dioxide",
+     e:"Ice",
+     f:"Water(20 °C)",
+     g:"Acetone",
+     h:"Teflon",
+     i:"Glycerin",
+     j:"Benzene",
+     k:"Halite",
+    l:"Quartz",
+    m:"Mica",
+    n:"Polyethylene",
+    o:"Glass",
+    p:"Diamond",
+    r:"Gallium arsenide",
+    s:"Silicon" },
+    ua: {
+      title:"ПОКАЗНИКИ ЗАЛОМЛЕННЯ",
+      subt: "Речовина",
+      subt2: "Показник заломлення",
+      pr: "1 (точне значення)",
+      a:"Вакуум",
+      b:"Гелій",
+      c:"Повітря",
+      d:"Вуглекислий газ",
+      e:"Лід",
+      f:"Вода(20 °C)",
+      g:"Ацетон",
+      h:"Тефлон",
+      i:"Гліцерин",
+      j:"Бензол",
+      k:"Кам'яна сіль",
+     l:"Кварц",
+     m:"Слюда",
+     n:"Поліетилен",
+     o:"Скло",
+     p:"Діамант",
+     r:"Арсенід галію",
+     s:"Кремній"
+    }
+   };
+  const [strings, setStrings] = useState(language==="en"?data["en"]:data["ua"]||null);
+useEffect(()=>{setStrings(language==="en"?data["en"]:data["ua"]||null)},[language])
 return <div style={{margin:'40px'}}>
 
 
