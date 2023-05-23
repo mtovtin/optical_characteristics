@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.56eb0edb.css",
-    "main.js": "/static/js/main.78c74fcd.js",
-    "static/js/787.eb872a43.chunk.js": "/static/js/787.eb872a43.chunk.js",
-    "static/media/optics1.jpeg": "/static/media/optics1.e53bcd5a5b0c4bd824a6.jpeg",
-    "static/media/Color-Optics.jpg": "/static/media/Color-Optics.72c2be80fa02fad03bb3.jpg",
-    "static/media/optics5.jpeg": "/static/media/optics5.fccc4730e1e8a6808aa6.jpeg",
-    "static/media/optics2.jpeg": "/static/media/optics2.73e105603a56f7bf8f6c.jpeg",
-    "static/media/optics3.jpeg": "/static/media/optics3.68108f3d63930898bc53.jpeg",
-    "static/media/optics4.jpeg": "/static/media/optics4.c4b21209feb965757136.jpeg",
-    "static/media/logo.png": "/static/media/logo.e88808fe8f1acf93e90a.png",
-    "static/media/flagb.webp": "/static/media/flagb.a50c6419b665c409393a.webp",
-    "index.html": "/index.html",
-    "main.56eb0edb.css.map": "/static/css/main.56eb0edb.css.map",
-    "main.78c74fcd.js.map": "/static/js/main.78c74fcd.js.map",
-    "787.eb872a43.chunk.js.map": "/static/js/787.eb872a43.chunk.js.map"
+    "main.css": "/optical_characteristics/static/css/main.56eb0edb.css",
+    "main.js": "/optical_characteristics/static/js/main.4b20179e.js",
+    "static/js/787.eb872a43.chunk.js": "/optical_characteristics/static/js/787.eb872a43.chunk.js",
+    "static/media/optics1.jpeg": "/optical_characteristics/static/media/optics1.e53bcd5a5b0c4bd824a6.jpeg",
+    "static/media/Color-Optics.jpg": "/optical_characteristics/static/media/Color-Optics.72c2be80fa02fad03bb3.jpg",
+    "static/media/optics5.jpeg": "/optical_characteristics/static/media/optics5.fccc4730e1e8a6808aa6.jpeg",
+    "static/media/optics2.jpeg": "/optical_characteristics/static/media/optics2.73e105603a56f7bf8f6c.jpeg",
+    "static/media/optics3.jpeg": "/optical_characteristics/static/media/optics3.68108f3d63930898bc53.jpeg",
+    "static/media/optics4.jpeg": "/optical_characteristics/static/media/optics4.c4b21209feb965757136.jpeg",
+    "static/media/logo.png": "/optical_characteristics/static/media/logo.e88808fe8f1acf93e90a.png",
+    "static/media/flagb.webp": "/optical_characteristics/static/media/flagb.a50c6419b665c409393a.webp",
+    "index.html": "/optical_characteristics/index.html",
+    "main.56eb0edb.css.map": "/optical_characteristics/static/css/main.56eb0edb.css.map",
+    "main.4b20179e.js.map": "/optical_characteristics/static/js/main.4b20179e.js.map",
+    "787.eb872a43.chunk.js.map": "/optical_characteristics/static/js/787.eb872a43.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.56eb0edb.css",
-    "static/js/main.78c74fcd.js"
+    "static/js/main.4b20179e.js"
   ]
 }
