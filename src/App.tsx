@@ -29,7 +29,7 @@ function App() {
       <Navbar setLanguage={setLanguage}></Navbar>
       <Router>
         <Routes>
-          <Route path="/optical-characteristics" element={<Home />} />
+          <Route path="/optical_characteristics" element={<Home />} />
           <Route path="/structures" element={<OpticalStructures language={language}/>} />
           <Route path="/numbers" element={<OpticalNumbers language={language}/>} />
           <Route path="/polarization" element={<Display language={language}/>} />
