@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/optical_characteristics/static/css/main.56eb0edb.css",
-    "main.js": "/optical_characteristics/static/js/main.29f922f3.js",
+    "main.js": "/optical_characteristics/static/js/main.1e6bd7e5.js",
     "static/js/787.eb872a43.chunk.js": "/optical_characteristics/static/js/787.eb872a43.chunk.js",
     "static/media/optics1.jpeg": "/optical_characteristics/static/media/optics1.e53bcd5a5b0c4bd824a6.jpeg",
     "static/media/Color-Optics.jpg": "/optical_characteristics/static/media/Color-Optics.72c2be80fa02fad03bb3.jpg",
@@ -13,11 +13,11 @@
     "static/media/flagb.webp": "/optical_characteristics/static/media/flagb.a50c6419b665c409393a.webp",
     "index.html": "/optical_characteristics/index.html",
     "main.56eb0edb.css.map": "/optical_characteristics/static/css/main.56eb0edb.css.map",
-    "main.29f922f3.js.map": "/optical_characteristics/static/js/main.29f922f3.js.map",
+    "main.1e6bd7e5.js.map": "/optical_characteristics/static/js/main.1e6bd7e5.js.map",
     "787.eb872a43.chunk.js.map": "/optical_characteristics/static/js/787.eb872a43.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.56eb0edb.css",
-    "static/js/main.29f922f3.js"
+    "static/js/main.1e6bd7e5.js"
   ]
 }
