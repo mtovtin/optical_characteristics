@@ -21,7 +21,7 @@ function Navbar(props: any) {
         indices: "Refractive indices of materials",
         page:"Page",
         transmissioncoefficient:"Transmission coefficient",
-        polarization:"Polarization",
+        polarization:"Dispersion",
         movement: "Movement of light at an angle",
         opt: "Optimization of parameters"
     },
@@ -32,7 +32,7 @@ function Navbar(props: any) {
         indices: "Показники заломлення матеріалів",
         page:"Сторінка",
         transmissioncoefficient:"Коефіцієнт пропускання",
-        polarization:"Поляризація",
+        polarization:"Дисперсія",
         movement: "Рух світла під кутом",
         opt: "Оптимізація параметрів"
     }
@@ -95,7 +95,7 @@ function Navbar(props: any) {
                         </ul>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link active" aria-current="page" href='/optical_characteristics/polarization'>{strings.polarization}</a>
+                        <a className="nav-link" aria-current="page" href='/optical_characteristics/polarization'>{strings.polarization}</a>
                     </li>
                 </ul>
             </div>

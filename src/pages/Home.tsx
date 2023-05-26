@@ -9,6 +9,7 @@ import { LanguageContextType } from '../Interfaces/PropsInteface';
 
 
 function Home() {
+	
 	const {language} = useContext(LanguageContext) as LanguageContextType;
 	let data = {
 		en:{

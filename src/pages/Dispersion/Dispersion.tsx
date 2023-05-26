@@ -13,7 +13,7 @@ import DisplayChart from "../DisplayChart";
 import CalculationDispersion from "./CalculationDispersion";
 import LocalizedStrings from 'react-localization';
 import { LanguageContext } from "../../Context/myContext";
-
+import { myFunction } from "./CalculationDispersion"
 
 
 function Dispersion (props: { language: string; })  {
@@ -25,7 +25,7 @@ function Dispersion (props: { language: string; })  {
           par3:"Structure parameters",
           ind1:"Refractive index of the medium",
           ind2:"Refractive index of the substrate",
-          layers:"Number of layers",
+          layers:"Number of known points",
           freq:"Frequency",
           layer:"Layer",
           angles:"Angles of incidence",
@@ -41,15 +41,15 @@ function Dispersion (props: { language: string; })  {
            par3:"Параметри структури",
            ind1:"Показник заломлення середовища",
            ind2:"Показник заломлення підкладки",
-           layers:"Кількість шарів",
+           layers:"Кількість відомих точок",
            freq:"Частота",
            layer:"Шар",
            angles:"Кути падіння",
-           graph:"Графік поляризації",
+           graph:"Графік дисперсії",
            refr:"Показник заломлення",
            density:"Товщина",
            apply:"ПРИЙНЯТИ",
-           showgraph:"ПОКАЗАТИ ГРАФІК ПОЛЯРИЗАЦІЇ",
+           showgraph:"ПОКАЗАТИ ГРАФІК ДИСПЕРСІЇ",
          }
        }
 
@@ -129,7 +129,28 @@ function Dispersion (props: { language: string; })  {
     );
 
     const handlerClickShowSchedule = () => {
-        const res = CalculationDispersion({
+        // const res = CalculationDispersion({
+        //     p0: refractiveIndexOfMedium,
+        //     ps: refractiveIndexOfSubstrate,
+        //     NN: numberOfLayers,
+        //     krok: 1,
+        //     nl1: spectrumRange[0],
+        //     nl2: spectrumRange[1],
+
+        //     arrayOfAngles: [angle],
+        
+        //     np: listOfLayerParams.map((el) => {
+        //         return el.n
+        //     }),
+
+        //     dp: listOfLayerParams.map((el) => {
+        //         return el.d
+        //     }),
+
+        //     isChart: true,
+        // }) as ResultCalculationForChart
+
+        const res = myFunction({
             p0: refractiveIndexOfMedium,
             ps: refractiveIndexOfSubstrate,
             NN: numberOfLayers,
@@ -148,8 +169,8 @@ function Dispersion (props: { language: string; })  {
             }),
 
             isChart: true,
-        }) as ResultCalculationForChart
-
+        }) as ResultCalculationForChart;
+        
         setData(res)
     }
 
@@ -168,23 +189,7 @@ function Dispersion (props: { language: string; })  {
                 <div className={"structure-parameters"}>
                     <h3 className={"sector-title ttl"}>{strings.par2}</h3>
                     <div className={"grid-all-parameters-content"}>
-                        
-                        <div className={"lable-and-textfield"}>
-                            <div className={"input-lable"}> {strings.ind1} </div>
-                            <TextField type={"number"} value={refractiveIndexOfMedium} onChange={(value) => setRefractiveIndexOfMedium(value.target.value as unknown as number)} label="1.51 ... 2.1" focused />
-                        </div>
 
-                        <div className={"lable-and-textfield"}>
-                            <div className={"input-lable"}> {strings.ind2} </div>
-                            <div style={{
-                                "width": "100%",
-                                "display": "flex",
-                                "justifyContent": "space-between",
-                            }}>
-                                <TextField type={"number"} value={refractiveIndexOfSubstrate} onChange={(value) => setRefractiveIndexOfSubstrate(value.target.value as unknown as number)} sx={{"width": "100%"}} label="1.51 ... 2.1" focused />
-                            </div>
-                            
-                        </div>
 
                         <div className={"lable-and-textfield"}>
                             <div className={"input-lable"}> {strings.layers} </div>
