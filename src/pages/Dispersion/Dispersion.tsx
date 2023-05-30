@@ -6,11 +6,11 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Send from '@mui/icons-material/Send'
-import { AccordionLayer } from "../../components/AccordionLayer";
+import { AccordionLayer } from "../../components/Accordion2";
 import { LanguageContextType, LayerParams, ResultCalculationForChart } from "../../Interfaces/PropsInteface";
 import { Slider, TextField, Button, FormGroup, FormControlLabel, Checkbox, RadioGroup, FormControl, Radio } from "@mui/material";
 import DisplayChart from "../DisplayChart";
-import CalculationDispersion from "./CalculationDispersion";
+// import CalculationDispersion from "./CalculationDispersion";
 import LocalizedStrings from 'react-localization';
 import { LanguageContext } from "../../Context/myContext";
 import { myFunction } from "./CalculationDispersion"
@@ -26,10 +26,10 @@ function Dispersion (props: { language: string; })  {
           ind1:"Refractive index of the medium",
           ind2:"Refractive index of the substrate",
           layers:"Number of known points",
-          freq:"Frequency",
+          freq:"Wave range",
           layer:"Layer",
           angles:"Angles of incidence",
-          graph:"Polarization graph",
+          graph:"Dispersion graph",
           refr:"Refractive index",
           density:"Density",
           apply:"APPLY",
@@ -42,7 +42,7 @@ function Dispersion (props: { language: string; })  {
            ind1:"Показник заломлення середовища",
            ind2:"Показник заломлення підкладки",
            layers:"Кількість відомих точок",
-           freq:"Частота",
+           freq:"Діапазон хвиль",
            layer:"Шар",
            angles:"Кути падіння",
            graph:"Графік дисперсії",
@@ -61,15 +61,18 @@ function Dispersion (props: { language: string; })  {
 
     const [listOfLayerParams, setListOfLayerParams] = React.useState<LayerParams[]>([]);
     const [spectrumRange, setSpectrumRange] = React.useState<number[]>([20, 37]);
+    const [xArr, setXArr] = React.useState<number[]>([]);
+    const [yArr, setYArr] = React.useState<number[]>([]);
     const [angle, setAngle] = React.useState<number>(1);
     
     // Методвідслідковує чи змінились дані для конкретного шару
     // перевіряти довжтину не потрібно, бо вона буде змінуватись в залежності від значення
     // кількості шарів
-    const handlerChangeParam = (id: number, n: number, d: number) => {
-        const values = new LayerParams(n, d);
-        listOfLayerParams[id] = values;
-        setListOfLayerParams(listOfLayerParams);
+    const handlerChangeParam = (id: number, x: number, y: number) => {
+        xArr[id] = x;
+        yArr[id] = y;
+        setXArr(xArr);
+        setYArr(yArr);
     }
 
     const handlerChangeSlider = (
@@ -97,13 +100,15 @@ function Dispersion (props: { language: string; })  {
 
 
     const hangleChangeNumberOfLayers = () => {
-        const newArray: LayerParams[] = []
-        
+        const newArray: number[] = []
+        const newArray2: number[] = []
         for(let i = 0; i < numberOfLayers; i++) {
-            newArray.push(new LayerParams(1.56, 171));
+            newArray.push(400);
+            newArray2.push(2)
         }
         
-        setListOfLayerParams(newArray)
+       setXArr(newArray);
+       setYArr(newArray2);
     }
 
     const handlerChangeRadio = (value: number) => {
@@ -151,24 +156,9 @@ function Dispersion (props: { language: string; })  {
         // }) as ResultCalculationForChart
 
         const res = myFunction({
-            p0: refractiveIndexOfMedium,
-            ps: refractiveIndexOfSubstrate,
-            NN: numberOfLayers,
-            krok: 1,
-            nl1: spectrumRange[0],
-            nl2: spectrumRange[1],
-
-            arrayOfAngles: [angle],
-        
-            np: listOfLayerParams.map((el) => {
-                return el.n
-            }),
-
-            dp: listOfLayerParams.map((el) => {
-                return el.d
-            }),
-
-            isChart: true,
+        x: xArr,
+        y: yArr,
+        spectrumRange: spectrumRange
         }) as ResultCalculationForChart;
         
         setData(res)
@@ -226,9 +216,9 @@ function Dispersion (props: { language: string; })  {
                     
                     <div className={"grid-all-parameters-content"}>
                         {
-                            listOfLayerParams.map((e: LayerParams, index: number) => {
+                            xArr.map((e: number, index: number) => {
                                 return (
-                                    <AccordionLayer language={props.language} key={index} handlerChangeParam={handlerChangeParam} index={index} n={e.n} d={e.d}/>
+                                    <AccordionLayer language={props.language} key={index} handlerChangeParam={handlerChangeParam} index={index} x={xArr[index]} y={yArr[index]}/>
                                 )
                             })
                         }
@@ -236,39 +226,7 @@ function Dispersion (props: { language: string; })  {
                 </div>
             </div>
 
-            <div className="div-deg">
-                <h3 className={"sector-title ttl"}>{strings.angles}</h3>
-                <div className={"deg-box"}>
-                    <div className={"div-deg-content"}>
-                    <FormControl>
-                            <RadioGroup
-                                aria-labelledby="demo-radio-buttons-group-label"
-                                name="radio-buttons-group"
-                                value={angle} 
-                                onChange={(value) => handlerChangeRadio(value.target.value as unknown as number)}
-                            >
-                                {
-                                    [   
-                                        0, 1, 2, 3, 4, 5, 6, 7, 8, 9,
-                                        10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
-                                        20, 21, 22, 23, 24, 25, 26, 27, 28, 29,
-                                        30, 31, 32, 33, 34, 35, 36, 37, 38, 39,
-                                        40, 41, 42, 43, 44, 45, 46, 47, 48, 49,
-                                        50, 51, 52, 53, 54, 55, 56, 57, 58, 59,
-                                        60, 61, 62, 63, 64, 65, 66, 67, 68, 69,
-                                        70, 71, 72, 73, 74, 75, 76, 77, 78, 79,
-                                        80
-                                    ].map((el) => {
-                                        return <>
-                                            <FormControlLabel value={el} control={<Radio />} label={`${el}`} />
-                                        </>
-                                    })
-                                }
-                            </RadioGroup>
-                        </FormControl>
-                    </div>
-                </div>
-            </div>
+           
 
             <Button onClick={() => handlerClickShowSchedule()} sx={{"width":"100%"}} variant="contained" endIcon={<Send />}>
               {strings.showgraph}

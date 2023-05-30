@@ -1,82 +1,82 @@
-import { PropCalculation, ResultCalculationForChart } from "../../Interfaces/PropsInteface"
+import { PropCalculation, PropsDispersion, ResultCalculationForChart } from "../../Interfaces/PropsInteface"
 
-const CalculationDispersion = (props: PropCalculation) => {
+// const CalculationDispersion = (props: PropCalculation) => {
 
-    let p0: number = props.p0;
-    let ps: number = props.ps;
+//     let p0: number = props.p0;
+//     let ps: number = props.ps;
 
-    let NN: number = props.NN;
-    let krok: number = props.krok;
-    let nl1: number = props.nl1;
-    let nl2: number = props.nl2;
-    let np: number[] = props.np;
-    let dp: number[] = props.dp;
+//     let NN: number = props.NN;
+//     let krok: number = props.krok;
+//     let nl1: number = props.nl1;
+//     let nl2: number = props.nl2;
+//     let np: number[] = props.np;
+//     let dp: number[] = props.dp;
 
-    const angle: number = props.arrayOfAngles[0]
+//     const angle: number = props.arrayOfAngles[0]
 
-    let deg0: number = 0;
-    let pi: number = Math.PI;
-    let deg: number[] = []
+//     let deg0: number = 0;
+//     let pi: number = Math.PI;
+//     let deg: number[] = []
 
-    deg0 = angle;
-    let deg_zero = pi * deg0 / 180.0;
+//     deg0 = angle;
+//     let deg_zero = pi * deg0 / 180.0;
 
-    // Значення кутів перевірено
-    for(let i = 0; i < NN; i++)
-    {
-        deg[i] = Math.asin(p0 * 1.0 / np[i] * Math.sin(deg_zero));
-    }
+//     // Значення кутів перевірено
+//     for(let i = 0; i < NN; i++)
+//     {
+//         deg[i] = Math.asin(p0 * 1.0 / np[i] * Math.sin(deg_zero));
+//     }
 
-    let RES_F: number[] = [];
-    let L: number[] = [];
+//     let RES_F: number[] = [];
+//     let L: number[] = [];
 
-    let kr1: number = Math.floor( (nl2 - nl1) / krok ) + 1;
+//     let kr1: number = Math.floor( (nl2 - nl1) / krok ) + 1;
 
 
-    const findDeltaF = (n1: number, n2: number, d: number, deg_0: number, l: number) => {
-        let res: number = 2 * pi * d * Math.sqrt( Math.abs(n1 * n1 * Math.sin(deg_0) * Math.sin(deg_0) - n2 * n2) ) / l; 
-        return res
-    }
+//     const findDeltaF = (n1: number, n2: number, d: number, deg_0: number, l: number) => {
+//         let res: number = 2 * pi * d * Math.sqrt( Math.abs(n1 * n1 * Math.sin(deg_0) * Math.sin(deg_0) - n2 * n2) ) / l; 
+//         return res
+//     }
 
-    const sumDeltaF = (l: number) => {
-        let all_n = [p0, ...np, ps]
-        let sum = 0;
+//     const sumDeltaF = (l: number) => {
+//         let all_n = [p0, ...np, ps]
+//         let sum = 0;
 
-        for(let i = 1; i < NN + 1; i++) {
-            sum += findDeltaF(all_n[i + 1], all_n[i - 1], dp[i - 1], deg[i - 1], l);
-        }
+//         for(let i = 1; i < NN + 1; i++) {
+//             sum += findDeltaF(all_n[i + 1], all_n[i - 1], dp[i - 1], deg[i - 1], l);
+//         }
         
-        return sum
-    }
+//         return sum
+//     }
 
 
 
-    for(let i = 0; i < kr1; i++) {
-        L[i] = nl1 + krok * i;
-        RES_F[i] = sumDeltaF(L[i])
-    }
+//     for(let i = 0; i < kr1; i++) {
+//         L[i] = nl1 + krok * i;
+//         RES_F[i] = sumDeltaF(L[i])
+//     }
 
-    let res = L.map((el, index) => {
-        return {
-            primary: el,
-            secondary: RES_F[index],
-        }   
-    })
-
-
-    return {
-        data: [
-            {
-                label: "Polarization",
-                data: res,
-            }
-        ]
-    } as ResultCalculationForChart;
-
-}
+//     let res = L.map((el, index) => {
+//         return {
+//             primary: el,
+//             secondary: RES_F[index],
+//         }   
+//     })
 
 
-const myFunction = (props: PropCalculation) => {
+//     return {
+//         data: [
+//             {
+//                 label: "Polarization",
+//                 data: res,
+//             }
+//         ]
+//     } as ResultCalculationForChart;
+
+// }
+
+
+const myFunction = (props: PropsDispersion) => {
 
 
     const transposeMatrix = (matrix: number[][]) => {
@@ -171,37 +171,40 @@ const myFunction = (props: PropCalculation) => {
 
 
 
-    const n = 14
+    const n = props.x.length;
     const i: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 
     // const y: number[] = [3.5, 3.49, 3.48, 3.47, 3.42, 3.4, 3.35, 3.29, 3.27, 3.25, 3.24, 3.23, 3.22, 3.21]
-    const y: number[] = [3.5, 3.49, 3.48, 3.47, 3.42, 3.4, 3.35, 3.29, 3.27, 3.25, 3.24, 3.23, 3.22, 3.21]
-    let x: number[] = [600, 610, 620, 630, 640, 650, 660, 670, 680, 690, 700, 710, 720, 730]
+    // const y: number[] = [3.5, 3.49, 3.48, 3.47, 3.42, 3.4, 3.35, 3.29, 3.27, 3.25, 3.24, 3.23, 3.22, 3.21]
+    // let x: number[] = [600, 610, 620, 630, 640, 650, 660, 670, 680, 690, 700, 710, 720, 730]
 
+    const y: number[] = props.y.map((el)=>el as number);
+    let x: number[] = props.x.map((el)=>el as number);
+console.log(x, y);
     for(let i = 0; i < n - 1; i++) {
         for(let j = i + 1; j < n; j++) {
-            if(x[i] < x[j]) {
+            if(x[i] > x[j]) {
                 let t = x[i]
                 x[i] = x[j]
                 x[j] = t
 
                 t = y[i]
                 y[i] = y[j]
-                y[j] = y[i]
+                y[j] = t
             }
         }
     }
-
+    console.log(x, y);
     const Y_reverse: number[][] = [];
-    for(let i = 0; i < 14; i++) {
+    for(let i = 0; i < n; i++) {
         Y_reverse.push([y[i]])
     }
 
 
     x = x.map((e) => e / 100);
-
+    console.log(x);
     let Y = [y.map((e) => e *e)]
-
+    console.log(Y);
     let X0 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
     let X1 = x.map((e) => e * e)
     let X2 = x.map((e) => e * e * e * e)
@@ -209,10 +212,10 @@ const myFunction = (props: PropCalculation) => {
     let X4 = x.map((e) => 1 / (e * e * e * e))
 
 
-
+    console.log(X4);
 
     let X: number[][] = []
-    for(let i = 0; i < 14; i++) {
+    for(let i = 0; i < n; i++) {
         X.push([])
         for(let j = 0; j < 5; j++) {
             X[i] = [X0[i], X3[i], X4[i], X1[i], X2[i]]
@@ -222,13 +225,13 @@ const myFunction = (props: PropCalculation) => {
     let XT = transposeMatrix(X)
 
 
-    console.log(X)
+    
 
 
 
 
     let a = multiplyMatrices(multiplyMatrices( inverseMatrix( multiplyMatrices(XT, X) ), XT), Y_reverse)
-    
+    console.log(a)
     const g = (function(A0: number, A1: number, A2: number, A3: number, A4: number) {
         return function(value: number) {
             return A0 + A1 / (value * value) + A2 / (value * value * value * value) + A3 * value * value + A4 * value * value * value * value 
@@ -240,6 +243,7 @@ const myFunction = (props: PropCalculation) => {
         return el - g(x[index])
     })
 
+    
     let ys = 1 / n * sum(y)
 
 
@@ -261,21 +265,20 @@ const myFunction = (props: PropCalculation) => {
 
     
     let result_g = x.map((el, index) => g(x[index]))
-
+    console.log(result_g)
+let x_2: number [] = [];
+let k1, k2;
+k1 = props.spectrumRange[0];
+k2 = props.spectrumRange[1];
+while(k1<k2) {
+    x_2.push(k1/100);
+    k1+=5;
+}
     let data = [  
-        {
-            label: "1",
-            data: x.map((el, index) => {
-                return {
-                    primary: el,
-                    secondary: y[index]
-                }
-            })
-        },
-
+       
         {
             label: "2",
-            data: x.map((el) => {
+            data: x_2.map((el) => {
                 let val = g(el);
                 return {
                     primary: el,
@@ -284,7 +287,7 @@ const myFunction = (props: PropCalculation) => {
             })
         },
     ]
-
+    console.log(data)
     return { data: data } as ResultCalculationForChart
 }
 
@@ -292,4 +295,4 @@ const myFunction = (props: PropCalculation) => {
 
 
 export { myFunction }
-export default CalculationDispersion
+// export default CalculationDispersion

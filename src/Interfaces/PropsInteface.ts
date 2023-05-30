@@ -57,6 +57,12 @@ interface ResultOptimization {
     max: number,
 }
 
+interface PropsDispersion {
+    x: number[],
+    y: number[],
+    spectrumRange: number []
+}
+
 
 class LayerParams {
     n: number = 1;
@@ -73,6 +79,6 @@ export type LanguageContextType = {
     update: (ln: string) => void;
   };
 
-export type {ResultOptimization, PropAccordionLayer, PropCalculation, ResultCalculationForChart, ResultCalculation, PropsOptimization }
+export type {ResultOptimization, PropsDispersion, PropAccordionLayer, PropCalculation, ResultCalculationForChart, ResultCalculation, PropsOptimization }
 export { LayerParams }
 
