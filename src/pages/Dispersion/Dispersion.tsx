@@ -218,7 +218,7 @@ function Dispersion (props: { language: string; })  {
                         {
                             xArr.map((e: number, index: number) => {
                                 return (
-                                    <AccordionLayer language={props.language} key={index} handlerChangeParam={handlerChangeParam} index={index} x={xArr[index]} y={yArr[index]}/>
+                                    <AccordionLayer language={props.language} key={index} handlerChangeParam={handlerChangeParam} index={index+1} x={xArr[index]} y={yArr[index]}/>
                                 )
                             })
                         }

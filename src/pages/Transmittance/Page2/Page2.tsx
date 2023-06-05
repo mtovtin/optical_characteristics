@@ -264,7 +264,7 @@ function Page2(props: { language: string; }) {
                         {
                             listOfLayerParams.map((e: LayerParams, index: number) => {
                                 return (
-                                    <AccordionLayer language={props.language} key={index} handlerChangeParam={handlerChangeParam} index={index} n={e.n} d={e.d}/>
+                                    <AccordionLayer language={props.language} key={index} handlerChangeParam={handlerChangeParam} index={index+1} n={e.n} d={e.d}/>
                                 )
                             })
                         }
