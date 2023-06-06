@@ -52,7 +52,7 @@ function Navbar(props: any) {
   return  <nav  className="navbar navbar-expand-md navbar-dark bg-dark">
 
         <div id='nb' className="container-fluid justify-content-lg-start justify-content-xs-center  justify-content-md-center justify-content-sm-center text-center ">
-            <a href="/optical_characteristics" className="navbar-brand">
+            <a href="/" className="navbar-brand">
                 <img src={logo} height="66" alt="CoolBrand"></img>
             </a>
             
@@ -65,18 +65,18 @@ function Navbar(props: any) {
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                     <li className="nav-item">
-                        <a className="nav-link " aria-current="page" href='/optical_characteristics'>{strings.home}</a>
+                        <a className="nav-link " aria-current="page" href='/'>{strings.home}</a>
                     </li>
                     <li className="nav-item dropdown">
                         <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             {strings.os}
                         </a>
                         <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a className="dropdown-item" href="/optical_characteristics/structures" target='_self'>{strings.modern}</a></li>
+                            <li><a className="dropdown-item" href="/structures" target='_self'>{strings.modern}</a></li>
                             <li>
                                 <hr className="dropdown-divider"></hr>
                             </li>
-                            <li><a className="dropdown-item" href="/optical_characteristics/numbers" target='_self'>{strings.indices}</a></li>
+                            <li><a className="dropdown-item" href="/numbers" target='_self'>{strings.indices}</a></li>
                         </ul>
                     </li>
 
@@ -87,15 +87,15 @@ function Navbar(props: any) {
                         {strings.transmissioncoefficient}
                         </a>
                         <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a className="dropdown-item" href="/optical_characteristics/light_at_angle" target='_self'>{strings.movement}</a></li>
+                            <li><a className="dropdown-item" href="/light_at_angle" target='_self'>{strings.movement}</a></li>
                             <li>
                                 <hr className="dropdown-divider"></hr>
                             </li>
-                            <li><a className="dropdown-item" href="/optical_characteristics/optimization" target='_self'>{strings.opt}</a></li>
+                            <li><a className="dropdown-item" href="/optimization" target='_self'>{strings.opt}</a></li>
                         </ul>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" aria-current="page" href='/optical_characteristics/polarization'>{strings.polarization}</a>
+                        <a className="nav-link" aria-current="page" href='/polarization'>{strings.polarization}</a>
                     </li>
                 </ul>
             </div>
