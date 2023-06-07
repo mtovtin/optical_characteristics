@@ -72,7 +72,7 @@ function Navbar(props: any) {
                             {strings.os}
                         </a>
                         <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a className="dropdown-item" href="/structures" target='_self'>{strings.modern}</a></li>
+                            <li><a className="dropdown-item" href="optical_characteristics/structures" target='_self'>{strings.modern}</a></li>
                             <li>
                                 <hr className="dropdown-divider"></hr>
                             </li>
