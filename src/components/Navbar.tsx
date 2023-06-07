@@ -72,11 +72,11 @@ function Navbar(props: any) {
                             {strings.os}
                         </a>
                         <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a className="dropdown-item" href="structures" target='_self'>{strings.modern}</a></li>
+                            <li><a className="dropdown-item" href="/structures" target='_self'>{strings.modern}</a></li>
                             <li>
                                 <hr className="dropdown-divider"></hr>
                             </li>
-                            <li><a className="dropdown-item" href="numbers" target='_self'>{strings.indices}</a></li>
+                            <li><a className="dropdown-item" href="/numbers" target='_self'>{strings.indices}</a></li>
                         </ul>
                     </li>
 
@@ -87,15 +87,15 @@ function Navbar(props: any) {
                         {strings.transmissioncoefficient}
                         </a>
                         <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a className="dropdown-item" href="light_at_angle" target='_self'>{strings.movement}</a></li>
+                            <li><a className="dropdown-item" href="/light_at_angle" target='_self'>{strings.movement}</a></li>
                             <li>
                                 <hr className="dropdown-divider"></hr>
                             </li>
-                            <li><a className="dropdown-item" href="optimization" target='_self'>{strings.opt}</a></li>
+                            <li><a className="dropdown-item" href="/optimization" target='_self'>{strings.opt}</a></li>
                         </ul>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" aria-current="page" href='polarization'>{strings.polarization}</a>
+                        <a className="nav-link" aria-current="page" href='/polarization'>{strings.polarization}</a>
                     </li>
                 </ul>
             </div>

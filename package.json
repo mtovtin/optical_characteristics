@@ -1,6 +1,5 @@
 {
   "name": "optical-characteristics",
-  "homepage": "https://mtovtin.github.io/optical_characteristics",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
