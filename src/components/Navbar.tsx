@@ -72,11 +72,11 @@ function Navbar(props: any) {
                             {strings.os}
                         </a>
                         <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a className="dropdown-item" href="/structures" target='_self'>{strings.modern}</a></li>
+                            <li><a className="dropdown-item" href="structures" target='_self'>{strings.modern}</a></li>
                             <li>
                                 <hr className="dropdown-divider"></hr>
                             </li>
-                            <li><a className="dropdown-item" href="/numbers" target='_self'>{strings.indices}</a></li>
+                            <li><a className="dropdown-item" href="numbers" target='_self'>{strings.indices}</a></li>
                         </ul>
                     </li>
 
@@ -95,7 +95,7 @@ function Navbar(props: any) {
                         </ul>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" aria-current="page" href='optical_characteristics/polarization'>{strings.polarization}</a>
+                        <a className="nav-link" aria-current="page" href='polarization'>{strings.polarization}</a>
                     </li>
                 </ul>
             </div>

@@ -202,17 +202,12 @@ console.log(x, y);
 
 
     x = x.map((e) => e / 100);
-    console.log(x);
     let Y = [y.map((e) => e *e)]
-    console.log(Y);
     let X0 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
     let X1 = x.map((e) => e * e)
     let X2 = x.map((e) => e * e * e * e)
     let X3 = x.map((e) => 1 / (e * e))
     let X4 = x.map((e) => 1 / (e * e * e * e))
-
-
-    console.log(X4);
 
     let X: number[][] = []
     for(let i = 0; i < n; i++) {
@@ -245,27 +240,10 @@ console.log(x, y);
 
     
     let ys = 1 / n * sum(y)
-
-
     let minus = y.map((el) => (el - ys) * (el - ys))
     let R2 = 1 - sum(b) + sum(minus)
 
-
-
-    // interface ResultCalculationForChart {
-    //     data: {
-    //         label: string;
-    //         data: {
-    //             primary: string | number | Date | null;
-    //             secondary: number | null;
-    //             radius: number | undefined;
-    //         }[];
-    //     }[]
-    // }
-
-    
     let result_g = x.map((el, index) => g(x[index]))
-    console.log(result_g)
 let x_2: number [] = [];
 let k1, k2;
 k1 = props.spectrumRange[0];
@@ -287,7 +265,6 @@ while(k1<k2) {
             })
         },
     ]
-    console.log(data)
     return { data: data } as ResultCalculationForChart
 }
 
