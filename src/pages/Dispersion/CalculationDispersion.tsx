@@ -1,4 +1,4 @@
-import { PropCalculation, PropsDispersion, ResultCalculationForChart } from "../../Interfaces/PropsInteface"
+import { PropsDispersion, ResultCalculationForChart } from "../../Interfaces/PropsInteface"
 
 // const CalculationDispersion = (props: PropCalculation) => {
 
@@ -172,7 +172,6 @@ const myFunction = (props: PropsDispersion) => {
 
 
     const n = props.x.length;
-    const i: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
 
     // const y: number[] = [3.5, 3.49, 3.48, 3.47, 3.42, 3.4, 3.35, 3.29, 3.27, 3.25, 3.24, 3.23, 3.22, 3.21]
     // const y: number[] = [3.5, 3.49, 3.48, 3.47, 3.42, 3.4, 3.35, 3.29, 3.27, 3.25, 3.24, 3.23, 3.22, 3.21]
@@ -203,7 +202,10 @@ console.log(x, y);
 
     x = x.map((e) => e / 100);
     let Y = [y.map((e) => e *e)]
-    let X0 = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    let X0 = [];
+    for(let i=0;i<n;i++){
+        X0.push(1);
+    }
     let X1 = x.map((e) => e * e)
     let X2 = x.map((e) => e * e * e * e)
     let X3 = x.map((e) => 1 / (e * e))
@@ -234,16 +236,6 @@ console.log(x, y);
     })(a[0][0], a[1][0], a[2][0], a[3][0], a[4][0])
 
 
-    let b = y.map((el, index) => {
-        return el - g(x[index])
-    })
-
-    
-    let ys = 1 / n * sum(y)
-    let minus = y.map((el) => (el - ys) * (el - ys))
-    let R2 = 1 - sum(b) + sum(minus)
-
-    let result_g = x.map((el, index) => g(x[index]))
 let x_2: number [] = [];
 let k1, k2;
 k1 = props.spectrumRange[0];
